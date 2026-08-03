@@ -23,10 +23,10 @@ jobs:
       # Downstream projects: Add any additional dependency installations here.
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.x
 
@@ -35,12 +35,12 @@ jobs:
           dotnet tool restore
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 24.x
 
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: '3.14'
 
@@ -110,12 +110,12 @@ jobs:
       # Downstream projects: Add any additional dependency installations here.
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: |
             8.x
@@ -243,12 +243,12 @@ jobs:
       # Downstream projects: Add any additional dependency installations here.
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4
+        uses: github/codeql-action/init@v4.37.4
         with:
           languages: csharp
           build-mode: manual
@@ -256,7 +256,7 @@ jobs:
           config-file: ./.github/codeql-config.yml
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: |
             8.x
@@ -283,7 +283,7 @@ jobs:
           --property:Version=${{ inputs.version }}
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v4
+        uses: github/codeql-action/analyze@v4.37.4
         with:
           category: "/language:csharp"
           output: artifacts
@@ -314,7 +314,7 @@ jobs:
       # Downstream projects: Add any additional artifact downloads here.
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Download all job artifacts
         uses: actions/download-artifact@v8
@@ -329,12 +329,12 @@ jobs:
       # Downstream projects: Add any additional dependency installations here.
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 'lts/*'
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.x
 
